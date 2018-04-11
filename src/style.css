@@ -1,0 +1,265 @@
+body {
+  background: #7d738c !important;
+  height: 100%;
+  font-family: "arial";
+  padding: 0;
+  margin: 0;
+}
+
+#header{
+  position: absolute;
+  top: 0px;
+}
+
+.title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inner{
+  width: 100vw;
+}
+
+.navBar{
+  margin-bottom: 10px;
+}
+
+.navBack{
+  margin-left: -360px;
+  transition: margin-left .5s;
+}
+.navBar.session, .navBar.session a{
+  color: #e4ba1b;
+}
+.navBar.break, .navBar.break a{
+  color: #337ab7;
+}
+
+.navBack:hover{
+  margin-left: 0px;
+}
+
+.navBar a{
+  width: 57px;
+}
+
+.navBar a:hover{
+  background: #555558;
+}
+
+.navBar{
+  white-space: nowrap;
+  background: #3f3f40;
+  margin-right: auto;
+  margin-left: auto;
+}
+.navBarTab{
+  padding-right: 8px;
+}
+.navBack{
+  background: #3f3f40;
+  width: 530px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.btn{
+  background: slate;
+}
+
+#controlButtonWrapper{
+  position: relative;
+  margin: 0 auto;
+  width: 459px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.centerControlButton{
+  width: 150px;
+  height: 40px;
+  margin-top: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: #e4ba1b;
+  background: #3f3f40;
+  border: black;
+}
+
+#toggleSessionBreak{
+  color: #337ab7;
+}
+
+.centerControlButton:active{
+  background: #6e657b;
+}
+
+.centerControlButton:focus{
+  outline:0;
+}
+
+#reset{
+  margin-bottom: 20px;
+}
+
+.sessionTime{
+  font-size: 25px;
+  color: #e4ba1b;
+  margin-bottom: 12px;
+  margin-top: 0px;
+  text-align: center;
+}
+.breakTime{
+  font-size: 25px;
+  color: #295f8e;
+  margin-bottom: 12px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.controlLabels{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.rightBorder{
+  text-align: right;
+}
+
+.controls{
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timerAdjustButton{
+  display: inline-block;
+  height: 50px;
+  width: 6rem;
+  margin: 0px;
+  font-size: 15px;
+  padding: 0;
+  padding-top: 5px;
+  padding-bottom: 5px; 
+  text-align: center;
+}
+
+#timerLabel{
+  text-align: center;
+  font-size: 25px;
+  margin-top: 35px;
+}
+.timer{
+  font-size: 3rem;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-top: 195px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sessionTimerColor{
+  color: #e4ba1b;
+}
+.breakTimerColor{
+  color: #295f8e;
+}
+#ringWrapper{
+  position: relative;
+  margin: auto;
+}
+.ring{
+  position: absolute;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+}
+
+#outterRing{
+  margin-top: 10px;
+  height: 100mm;
+}
+
+#middleRing{
+  margin-top: 48px;
+  height: 80mm;
+}
+
+#innerRing{
+  margin-top: 86px;
+  height: 60mm;
+}
+
+
+@media screen and (max-width:480px){
+   #header{
+    display: none;
+   } 
+
+  .title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+    
+  .navBack{
+    margin-left: -312px;
+  }
+    
+  .navBar{
+    height: 45px;
+  }
+
+  .navBar a{
+    width: 49px;
+  }
+    
+  .centerControlButton{
+    width:auto;
+  }
+
+  .timerAdjustButton{
+    height: 20px;
+    width: 5rem;
+    margin: 0px;
+    font-size: 10px;
+  }  
+
+  .sessionTime, .breakTime{
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+    
+  #timerLabel{
+    font-size: 18px;
+    margin-top: 8px;
+  }
+    
+
+  .timer{
+      margin-top: 135px;
+      font-size: 2.75rem;
+
+  }
+    
+  #outterRing {
+      margin-top: -1px;
+      margin-left: ;
+      height: 77mm;
+  }
+
+  #middleRing {
+      margin-top: 29px;
+      height: 61mm;
+  }
+
+  #innerRing {
+      margin-top: 59px;
+      height: 45mm;
+  }
+}
+
+
+

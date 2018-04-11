@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+		<title>AAron's Pomodoro Timer</title>
+	</head>
+	<body>
+		<header id='header'>
+	      	<p>Created by: AAron Staton</p>
+	    </header>
+	    <h1 class='title'>Pomodoro Timer</h1>
+	    <div class='outer'>
+		    <div class='inner'>
+		        <div class='controls'>
+			        <div class='navBack'>
+			            <nav class='navBar session' title='If session timer is running click the reset button after setting new time'>
+				            <a role='button' class='timerAdjustButton btn' id='sessionHoursUp'>Hours<br>+</a>
+				            <a role='button' class='timerAdjustButton btn' id='sessionHoursDown'>Hours<br>-</a>
+				            <a role='button' class='timerAdjustButton btn' id='sessionMinutesUp'>Mins<br>+</a>
+				            <a role='button' class='timerAdjustButton btn' id='sessionMinutesDown'>Mins<br>-</a>
+				            <a role='button' class='timerAdjustButton btn' id='sessionSecondsUp'>Secs<br>+</a>
+				            <a role='button' class='timerAdjustButton btn' id='sessionSecondsDown'>Secs<br>-</a>
+				            <span class='navBarTab'>
+				            	Change Session Time
+				            </span>
+			            </nav>
+			        </div>
+			        <div class='navBack'>
+			            <nav class='navBar break' title='If break timer is running click the reset button after setting new time'>
+				            <a role='button' class='timerAdjustButton btn' id='breakHoursUp'>Hours<br>+</a>
+				            <a role='button' class='timerAdjustButton btn' id='breakHoursDown'>Hours<br>-</a>
+				            <a role='button' class='timerAdjustButton btn' id='breakMinutesUp'>Mins<br>+</a>
+				            <a role='button' class='timerAdjustButton btn' id='breakMinutesDown'>Mins<br>-</a>
+				            <a role='button' class='timerAdjustButton btn' id='breakSecondsUp'>Secs<br>+</a>
+				            <a role='button' class='timerAdjustButton btn' id='breakSecondsDown'>Secs<br>-</a>
+				            <span class='navBarTab'>
+				            	Change Break Time
+				        	</span>
+			          	</nav>
+			        </div>
+			        <div id='controlButtonWrapper'>
+			           	<button class='centerControlButton' id='start'>
+			           		Start/Stop
+			           	</button>
+			            <button class='centerControlButton' id='toggleSessionBreak'>
+			            	Toggle Session/Break
+			            </button>
+			            <button class='centerControlButton' id='reset'>
+			            	Reset Timer
+			            </button>
+			            <p class='sessionTime'>
+			            	Session Time 
+			            	<span id="sessionHours"></span> : 
+			            	<span id='sessionMinutes'></span> :
+			            	<span id="sessionSeconds"></span>
+			            </p>
+			            <p class="breakTime">
+			            	Break Time
+			            	<span id="breakHours"></span> : 
+			            	<span id='breakMinutes'></span> : 
+			            	<span id="breakSeconds"></span>
+			            </p>
+			        </div>
+		          	<div>
+		          	</div>
+
+		          <p id='timerLabel'><span class='sessionTimerColor'>Session Time Remaining</span></p>
+		        </div>
+		        <div id='ringWrapper'>
+		        	<svg class='ring' id="outterRing" viewBox="0 0 100 99.8942">
+		  				<g id="layer1" transform="translate(294.264 61.6109)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+		    				<path id="path5075" style="opacity: 1; fill: #81e01d; fill-opacity: 0.929648; stroke-width: 0.266304;" d="m -241.264 -61.6109 v 7.54424 a 42.5 42.5 0 0 1 39.4999 42.3499 a 42.5 42.5 0 0 1 -42.4997 42.4997 a 42.5 42.5 0 0 1 -42.5003 -42.4997 a 42.5 42.5 0 0 1 39.5004 -42.3938 v -7.45639 a 50 50 0 0 0 -47.0002 49.8502 a 50 50 0 0 0 50 50 a 50 50 0 0 0 50 -50 a 50 50 0 0 0 -47.0002 -49.8941 Z"/>
+		  				</g>
+					</svg>
+					<svg class='ring' id="middleRing" viewBox="0 0 80.0003 79.8794">
+					  	<g id="layer1" transform="translate(427.048 80.0944)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+					    	<path id="path5080" style="opacity: 1; fill: #81e11d; fill-opacity: 0.929412; stroke-width: 0.271845;" d="m -384.047 -80.0944 v 7.52926 a 32.5 32.5 0 0 1 29.4995 32.35 a 32.5 32.5 0 0 1 -32.4998 32.4998 a 32.5 32.5 0 0 1 -32.4998 -32.4998 a 32.5 32.5 0 0 1 29.5 -32.3329 v -7.51685 a 40 40 0 0 0 -37.0003 39.8498 a 40 40 0 0 0 40.0001 40.0001 a 40 40 0 0 0 40.0001 -40.0001 a 40 40 0 0 0 -36.9998 -39.8792 Z"/>
+					  	</g>
+					</svg>
+					<svg class='ring' id="innerRing" viewBox="0 0 60.0005 59.8501">
+					  	<g id="layer1" transform="translate(538 145.675)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+					    	<path id="path5088" style="opacity: 1; fill: #81e11d; fill-opacity: 0.929412; stroke-width: 0.265823;" d="m -511 -145.675 a 30 30 0 0 0 -27.0004 29.8499 a 30 30 0 0 0 30.0002 30.0002 a 30 30 0 0 0 30.0002 -30.0002 a 30 30 0 0 0 -26.9999 -29.8188 v 6.53552 a 23.5 23.5 0 0 1 20.4995 23.2833 a 23.5 23.5 0 0 1 -23.4999 23.4999 a 23.5 23.5 0 0 1 -23.4999 -23.4999 a 23.5 23.5 0 0 1 20.5 -23.2787 Z"/>
+					  	</g>
+					</svg>
+		        </div>
+		        <div>
+		          <p class='timer'>00:00</p>
+		        </div>
+		    </div>
+	    </div>
+		<audio id="timerBell"> 
+			<source src="sounds/timerBell.mp3" type="audio/mp3">
+			<source src="sounds/timerBell.wav" type="audio/wav">
+		</audio>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+		<script src="dist.script.js"></script>
+	</body>
+</html>
