@@ -174,23 +174,26 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  
   margin: auto;
+  width: 200px;
 }
 
 #outterRing{
   margin-top: 10px;
   height: 100mm;
+  width: 100mm;
 }
 
 #middleRing{
   margin-top: 48px;
   height: 80mm;
+  width: 80mm;
 }
 
 #innerRing{
   margin-top: 86px;
   height: 60mm;
+  width: 60mm;
 }
 
 
