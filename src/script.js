@@ -161,7 +161,11 @@ $(document).ready(function() {
 		        transformOrigin: "50% 50%"
 		    });
 		    if(inner && middle && outter){
-		      	setTimeout(() => resolve(message + "resetRingAnimation complete "), 1500);
+		    	console.log("at resetRingAnimation timeout");
+		      	setTimeout(() =>{ 
+		      		console.log("completed resetRingAnimation timeout");
+		      		resolve(message + "resetRingAnimation complete ")
+		      	}, 1500);
 		  	} else{
 		  		reject(message + "resetRingAnimation failure ");
 		  	}
@@ -195,7 +199,11 @@ $(document).ready(function() {
 		        });
 		    }
 		    if(inner){
-	      		setTimeout(() => resolve(message + "beginningRingAlignment complete "), 3000);
+		    	console.log("at beginningRingAlignment timeout");
+	      		setTimeout(() => {
+	      			console.log("completed beginningRingAlignment timeout");
+	      			resolve(message + "beginningRingAlignment complete ")
+	      		}, 3000);
 	      	}else{
 	      		reject(message + "beginningRingAlignment failure ");
 	      	}
@@ -294,10 +302,10 @@ $(document).ready(function() {
 		            return beginningRingAlignment(result);
 		        })
 		        .then(function(result) {
-		            return setTimeout(function(){ringAnimation(result);},2000);
+		            return ringAnimation(result);
 		        })
 		        .then(function(result) {
-		            return setTimeout(function(){startTimer(result);},2000);
+		            return startTimer(result);
 		        })
 		        .then(function(result) {
 		            enableButtonFunction();
@@ -326,10 +334,10 @@ $(document).ready(function() {
 		            return beginningRingAlignment(result);
 		        })
 		        .then(function(result) {
-		            return setTimeout(function(){ringAnimation(result);},2000);
+		            return ringAnimation(result);
 		        })
 		        .then(function(result) {
-		            return setTimeout(function(){startTimer(result);},2000);
+		            return startTimer(result);
 		        })
 		        .then(function(result) {
 		           	enableButtonFunction();
