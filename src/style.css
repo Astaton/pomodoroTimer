@@ -1,5 +1,8 @@
+html body{
+  height: 100vh;
+}
 body {
-  background: #7d738c !important;
+  background: #7d738c;
   height: 100%;
   font-family: "arial";
   padding: 0;
@@ -156,7 +159,7 @@ body {
   text-align: center;
   left: 0;
   right: 0;
-  margin-top: 195px;
+  margin-top: -220px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -169,31 +172,29 @@ body {
 #ringWrapper{
   position: relative;
   margin: auto;
+  width: 100mm;
+  height: 100mm;
 }
 .ring{
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   margin: auto;
-  width: 200px;
 }
 
 #outterRing{
   margin-top: 10px;
   height: 100mm;
-  width: 100mm;
 }
 
 #middleRing{
   margin-top: 48px;
   height: 80mm;
-  width: 80mm;
 }
 
 #innerRing{
   margin-top: 86px;
   height: 60mm;
-  width: 60mm;
 }
 
 

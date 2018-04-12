@@ -105,25 +105,26 @@ $(document).ready(function() {
 
 	var ringAnimation = function(message) {
 	    return new Promise(function(resolve, reject) {
-		    let innerComplete = TweenMax.to("#innerRing", totalTime, {
-		        ease: Power0.easeNone,
-		        rotation: totalTime * 360,
-		        paused: pauseAnim,
-		        transformOrigin: "50% 50%"
-		    });
+		    // let innerComplete = TweenMax.to("#innerRing", totalTime, {
+		    //     ease: Power0.easeNone,
+		    //     rotation: totalTime * 360,
+		    //     paused: pauseAnim,
+		    //     transformOrigin: "50% 50%"
+		    // });
 		    let middleComplete = TweenMax.to("#middleRing", totalTime, {
 		        ease: Power0.easeNone,
 		        rotation: -(totalTime / 60 * 360) + minRotation,
 		        paused: pauseAnim,
 		        transformOrigin: "50% 50%"
 		    });
-		    let outterComplete = TweenMax.to("#outterRing", totalTime, {
-		        rotation: totalTime / 60 / 60 * 360 - hourRotation - minRotation / 60,
-		        ease: Power0.easeNone,
-		        paused: pauseAnim,
-		        transformOrigin: "50% 50%"
-		    });
-		    if(innerComplete && middleComplete && outterComplete){
+		    // let outterComplete = TweenMax.to("#outterRing", totalTime, {
+		    //     rotation: totalTime / 60 / 60 * 360 - hourRotation - minRotation / 60,
+		    //     ease: Power0.easeNone,
+		    //     paused: pauseAnim,
+		    //     transformOrigin: "50% 50%"
+		    // });
+		    // if(innerComplete && middleComplete && outterComplete){
+		    	if(middleComplete){
 		      	resolve(message + "ringAnimation started ");
 		  	} else{
 		  		reject(message + "ringAnimation failure ");
@@ -145,22 +146,23 @@ $(document).ready(function() {
 
 	var resetRingAnimation = function(message) {
 	    return new Promise(function(resolve, reject) {
-		    let inner = TweenMax.to("#innerRing", 1.5, {
-		        rotation: 0,
-		        ease: Power2.easeOut,
-		        transformOrigin: "50% 50%"
-		    });
+		    // let inner = TweenMax.to("#innerRing", 1.5, {
+		    //     rotation: 0,
+		    //     ease: Power2.easeOut,
+		    //     transformOrigin: "50% 50%"
+		    // });
 		    let middle = TweenMax.to("#middleRing", 1.5, {
 		        rotation: 0,
 		        ease: Power2.easeOut,
 		        transformOrigin: "50% 50%"
 		    });
-		    let outter = TweenMax.to("#outterRing", 1.5, {
-		        rotation: 0,
-		        ease: Power2.easeOut,
-		        transformOrigin: "50% 50%"
-		    });
-		    if(inner && middle && outter){
+		    // let outter = TweenMax.to("#outterRing", 1.5, {
+		    //     rotation: 0,
+		    //     ease: Power2.easeOut,
+		    //     transformOrigin: "50% 50%"
+		    // });
+		    // if(inner && middle && outter){
+		    	if(middle){
 		      	setTimeout(() => resolve(message + "resetRingAnimation complete "), 1500);
 		  	} else{
 		  		reject(message + "resetRingAnimation failure ");
@@ -173,11 +175,11 @@ $(document).ready(function() {
 	      	minRotation = 0;
 	      	hourRotation = 0;
 
-		    let inner = TweenMax.to("#innerRing", 0, {
-		        rotation: 0,
-		        ease: Bounce.easeOut,
-		        transformOrigin: "50% 50%"
-		    });
+		    // let inner = TweenMax.to("#innerRing", 0, {
+		    //     rotation: 0,
+		    //     ease: Bounce.easeOut,
+		    //     transformOrigin: "50% 50%"
+		    // });
 		    if (parseInt(myTimer.seconds) != 0) {
 		        minRotation = parseInt(myTimer.seconds) * 6;
 		        TweenMax.to("#middleRing", 3, {
@@ -186,15 +188,16 @@ $(document).ready(function() {
 		        	transformOrigin: "50% 50%"
 		        });
 		    }
-		    if (parseInt(myTimer.minutes) != 0) {
-		        hourRotation = parseInt(myTimer.minutes) * 6;
-		        TweenMax.to("#outterRing", 3, {
-		          	rotation: -hourRotation,
-		          	ease: Bounce.easeOut,
-		          	transformOrigin: "50% 50%"
-		        });
-		    }
-		    if(inner){
+		    // if (parseInt(myTimer.minutes) != 0) {
+		    //     hourRotation = (parseInt(myTimer.minutes) * 6)/2;
+		    //     TweenMax.to("#outterRing", 3, {
+		    //       	rotation: -hourRotation,
+		    //       	ease: Bounce.easeOut,
+		    //       	transformOrigin: "50% 50%"
+		    //     });
+		    // }
+		    // if(inner){
+		    	if(true){
 	      		setTimeout(() => resolve(message + "beginningRingAlignment complete "), 3000);
 	      	}else{
 	      		reject(message + "beginningRingAlignment failure ");
@@ -207,11 +210,11 @@ $(document).ready(function() {
 		    minRotation = 0;
 		    hourRotation = 0;
 
-		    let inner = TweenMax.to("#innerRing", 0, {
-		        rotation: 0,
-		        ease: Bounce.easeOut,
-		        transformOrigin: "50% 50%"
-		    });
+		    // let inner = TweenMax.to("#innerRing", 0, {
+		    //     rotation: 0,
+		    //     ease: Bounce.easeOut,
+		    //     transformOrigin: "50% 50%"
+		    // });
 		    if (parseInt(myTimer.seconds) != 0) {
 		        minRotation = parseInt(myTimer.seconds) * 6;
 		        TweenMax.to("#middleRing", 0, {
@@ -220,15 +223,16 @@ $(document).ready(function() {
 		          	transformOrigin: "50% 50%"
 		        });
 		    }
-		    if (parseInt(myTimer.minutes) != 0) {
-		        hourRotation = parseInt(myTimer.minutes) * 6;
-		        TweenMax.to("#outterRing", 0, {
-		          	rotation: -hourRotation,
-		          	ease: Bounce.easeOut,
-		          	transformOrigin: "50% 50%"
-		        });
-		    }
-		    if(inner){
+		    // if (parseInt(myTimer.minutes) != 0) {
+		    //     hourRotation = parseInt(myTimer.minutes) * 6;
+		    //     TweenMax.to("#outterRing", 0, {
+		    //       	rotation: -hourRotation,
+		    //       	ease: Bounce.easeOut,
+		    //       	transformOrigin: "50% 50%"
+		    //     });
+		    // }
+		    // if(inner){
+		    	if(true){
 	      		resolve(message + "beginningRingAlignment complete");
 	      	}else{
 	      		reject(message + "beginningRingAlignment failure ");
