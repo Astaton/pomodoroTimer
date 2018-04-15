@@ -162,6 +162,7 @@ $(document).ready(function() {
 		    });
 		    if(inner && middle && outter){
 		    	console.log("at resetRingAnimation timeout");
+		    	//setTimeout resolves the promise after the animation has completed
 		      	setTimeout(() =>{ 
 		      		console.log("completed resetRingAnimation timeout");
 		      		resolve(message + "resetRingAnimation complete ")
@@ -200,6 +201,7 @@ $(document).ready(function() {
 		    }
 		    if(inner){
 		    	console.log("at beginningRingAlignment timeout");
+		    	//setTimeout resolves the promise after the animation has completed
 	      		setTimeout(() => {
 	      			console.log("completed beginningRingAlignment timeout");
 	      			resolve(message + "beginningRingAlignment complete ")
@@ -481,7 +483,7 @@ $(document).ready(function() {
 		        	return ringAnimation(result)
 		        })
 		        .then(function(result) {
-		        enableButtonFunction();
+		        	enableButtonFunction();
 		        	if (timerOn) {
 		            	return startTimer(result);
 		        	}
@@ -495,6 +497,7 @@ $(document).ready(function() {
 		        );
 			} else {
 		        sessionTimerActive = true;
+		        console.log("In toggle: " + sessionTimerActive);
 		        disableButtonFunction();
 		        myTimer.seconds = sessionTime.seconds;
 		        myTimer.minutes = sessionTime.minutes;
@@ -503,19 +506,18 @@ $(document).ready(function() {
 		        textColorChange();
 		        resetRingAnimation()
 		        .then(function(result) {
-		        	calculateRotations(result)
+		        	return calculateRotations(result)
 		        })
 		        .then(function(result) {
-		        	beginningRingAlignment(result)
+		        	return beginningRingAlignment(result)
 		        })
 		        .then(function(result) {
-		        	ringAnimation(result)
+		        	return ringAnimation(result)
 		        })
 		        .then(function(result) {
-		            //return startTimer(result);
 		            enableButtonFunction();
 		            if (timerOn) {
-		              startTimer(result);
+		            	return startTimer(result);
 		            }
 		        });
 		        $(".timer").replaceWith(

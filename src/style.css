@@ -157,7 +157,7 @@ body {
   text-align: center;
   left: 0;
   right: 0;
-  margin-top: 195px;
+  margin-top: -240px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -170,6 +170,9 @@ body {
 #ringWrapper{
   position: relative;
   margin: auto;
+  height: 110mm;
+  max-width: 100mm;
+  overflow: hidden;
 }
 .ring{
   position: absolute;
