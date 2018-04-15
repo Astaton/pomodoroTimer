@@ -27,6 +27,8 @@ body {
 
 .navBack{
   margin-left: -360px;
+  -webkit-transition: margin-left .5s;
+  -moz-transition: margin-left .5s;
   transition: margin-left .5s;
 }
 .navBar.session, .navBar.session a{
@@ -60,9 +62,9 @@ body {
 .navBack{
   background: #3f3f40;
   width: 530px;
-  width: -moz-fit-content !important;
-  width: -webkit-fit-content !important;
-  width: fit-content !important;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
 }
 
 .btn{
