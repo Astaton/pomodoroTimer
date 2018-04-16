@@ -4,8 +4,8 @@ const gulpHtmlMin = require('gulp-htmlmin');
 
 const src_html = 'public/*.html';
 const src_css = 'src/*.css';
-const dest_html = '';
-const dest_css = '';
+const dest_html = 'public/';
+const dest_css = 'src/';
 
 
 
@@ -20,7 +20,7 @@ gulp.task('prefixes', function(){
 
 //minifies html files
 gulp.task('htmlMini', function(){
-	return gulp.src(src_html)
+	gulp.src(src_html)
 	.pipe(gulpHtmlMin({
 		collapseWhitespace:true,
 		minifyCSS: true
