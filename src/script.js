@@ -105,19 +105,19 @@ $(document).ready(function() {
 
 	var ringAnimation = function(message) {
 	    return new Promise(function(resolve, reject) {
-		    let innerComplete = TweenMax.to("#innerRing", totalTime, {
+		    let innerComplete = TweenLite.to("#innerRing", totalTime, {
 		        ease: Power0.easeNone,
 		        rotation: totalTime * 360,
 		        paused: pauseAnim,
 		        transformOrigin: "50% 50%"
 		    });
-		    let middleComplete = TweenMax.to("#middleRing", totalTime, {
+		    let middleComplete = TweenLite.to("#middleRing", totalTime, {
 		        ease: Power0.easeNone,
 		        rotation: -(totalTime / 60 * 360) + minRotation,
 		        paused: pauseAnim,
 		        transformOrigin: "50% 50%"
 		    });
-		    let outterComplete = TweenMax.to("#outterRing", totalTime, {
+		    let outterComplete = TweenLite.to("#outterRing", totalTime, {
 		        rotation: totalTime / 60 / 60 * 360 - hourRotation - minRotation / 60,
 		        ease: Power0.easeNone,
 		        paused: pauseAnim,
@@ -145,17 +145,17 @@ $(document).ready(function() {
 
 	var resetRingAnimation = function(message) {
 	    return new Promise(function(resolve, reject) {
-		    let inner = TweenMax.to("#innerRing", 1.5, {
+		    let inner = TweenLite.to("#innerRing", 1.5, {
 		        rotation: 0,
 		        ease: Power2.easeOut,
 		        transformOrigin: "50% 50%"
 		    });
-		    let middle = TweenMax.to("#middleRing", 1.5, {
+		    let middle = TweenLite.to("#middleRing", 1.5, {
 		        rotation: 0,
 		        ease: Power2.easeOut,
 		        transformOrigin: "50% 50%"
 		    });
-		    let outter = TweenMax.to("#outterRing", 1.5, {
+		    let outter = TweenLite.to("#outterRing", 1.5, {
 		        rotation: 0,
 		        ease: Power2.easeOut,
 		        transformOrigin: "50% 50%"
@@ -178,14 +178,14 @@ $(document).ready(function() {
 	      	minRotation = 0;
 	      	hourRotation = 0;
 
-		    let inner = TweenMax.to("#innerRing", 0, {
+		    let inner = TweenLite.to("#innerRing", 0, {
 		        rotation: 0,
 		        ease: Bounce.easeOut,
 		        transformOrigin: "50% 50%"
 		    });
 		    if (parseInt(myTimer.seconds) != 0) {
 		        minRotation = parseInt(myTimer.seconds) * 6;
-		        TweenMax.to("#middleRing", 3, {
+		        TweenLite.to("#middleRing", 3, {
 		        	rotation: minRotation,
 		        	ease: Bounce.easeOut,
 		        	transformOrigin: "50% 50%"
@@ -193,7 +193,7 @@ $(document).ready(function() {
 		    }
 		    if (parseInt(myTimer.minutes) != 0) {
 		        hourRotation = parseInt(myTimer.minutes) * 6;
-		        TweenMax.to("#outterRing", 3, {
+		        TweenLite.to("#outterRing", 3, {
 		          	rotation: -hourRotation,
 		          	ease: Bounce.easeOut,
 		          	transformOrigin: "50% 50%"
@@ -217,14 +217,14 @@ $(document).ready(function() {
 		    minRotation = 0;
 		    hourRotation = 0;
 
-		    let inner = TweenMax.to("#innerRing", 0, {
+		    let inner = TweenLite.to("#innerRing", 0, {
 		        rotation: 0,
 		        ease: Bounce.easeOut,
 		        transformOrigin: "50% 50%"
 		    });
 		    if (parseInt(myTimer.seconds) != 0) {
 		        minRotation = parseInt(myTimer.seconds) * 6;
-		        TweenMax.to("#middleRing", 0, {
+		        TweenLite.to("#middleRing", 0, {
 		          	rotation: minRotation,
 		          	ease: Bounce.easeOut,
 		          	transformOrigin: "50% 50%"
@@ -232,7 +232,7 @@ $(document).ready(function() {
 		    }
 		    if (parseInt(myTimer.minutes) != 0) {
 		        hourRotation = parseInt(myTimer.minutes) * 6;
-		        TweenMax.to("#outterRing", 0, {
+		        TweenLite.to("#outterRing", 0, {
 		          	rotation: -hourRotation,
 		          	ease: Bounce.easeOut,
 		          	transformOrigin: "50% 50%"

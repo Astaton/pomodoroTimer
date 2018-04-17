@@ -1,11 +1,14 @@
 const gulp = require('gulp');
 const gulpAutoprefix = require('gulp-autoprefixer');
 const gulpHtmlMin = require('gulp-htmlmin');
+const gulpGzip = require('gulp-gzip');
 
 const src_html = 'public/*.html';
 const src_css = 'src/*.css';
+const src_gzip = 'public'
 const dest_html = 'public/';
 const dest_css = 'src/';
+const dest_gzip = 'public/'
 
 
 
@@ -27,3 +30,10 @@ gulp.task('htmlMini', function(){
 	}))
 	.pipe(gulp.dest(dest_html))
 })
+
+//gzip js files
+gulp.task('gzip', function(){
+	gulp.src(src_gzip)
+	.pipe(gulpGzip())
+	.pipe(gulp.dest(dest_gzip))
+});
